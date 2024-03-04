@@ -1,0 +1,60 @@
+Docker cheat sheet with the top 50 commands:
+Managing Images and Containers:
+1.	docker pull [image_name]: Pull an image from Docker Hub.
+2.	docker images: List all images available locally.
+3.	docker rmi [image_id/name]: Remove an image.
+4.	docker run [options] [image_name]: Run a container from an image.
+5.	docker ps: List running containers.
+6.	docker ps -a: List all containers (both running and stopped).
+7.	docker start [container_id/name]: Start a stopped container.
+8.	docker stop [container_id/name]: Stop a running container.
+9.	docker rm [container_id/name]: Remove a container.
+10.	docker logs [container_id/name]: View logs of a container.
+11.	docker inspect [container_id/name/image_id]: Display detailed information about a container or image.
+12.	docker exec [options] [container_id/name] [command]: Execute a command in a running container.
+Building Images:
+1.	docker build [options] [path]: Build an image from a Dockerfile.
+2.	docker tag [image_id/name] [new_image_name]: Tag an image with a new name.
+3.	docker push [image_name]: Push an image to Docker Hub.
+Managing Volumes and Networks:
+1.	docker volume ls: List all volumes.
+2.	docker volume create [volume_name]: Create a volume.
+3.	docker volume rm [volume_name]: Remove a volume.
+4.	docker network ls: List all networks.
+5.	docker network create [network_name]: Create a network.
+6.	docker network rm [network_name]: Remove a network.
+Docker Compose:
+1.	docker-compose up: Create and start containers defined in the docker-compose.yml file.
+2.	docker-compose down: Stop and remove containers defined in the docker-compose.yml file.
+3.	docker-compose build: Build or rebuild services defined in the docker-compose.yml file.
+4.	docker-compose logs [service_name]: View logs of a specific service.
+5.	docker-compose exec [service_name] [command]: Execute a command in a running service container.
+Container Management:
+1.	docker pause [container_id/name]: Pause a running container.
+2.	docker unpause [container_id/name]: Unpause a paused container.
+3.	docker rename [old_container_name] [new_container_name]: Rename a container.
+4.	docker update [options] [container_id/name]: Update configuration of one or more containers.
+Miscellaneous:
+1.	docker version: Check Docker version.
+2.	docker info: Display Docker system-wide information.
+3.	docker search [term]: Search for an image on Docker Hub.
+4.	docker login: Log in to a Docker registry.
+5.	docker logout: Log out from a Docker registry.
+6.	docker commit [container_id/name] [new_image_name]: Create a new image from a container's changes.
+7.	docker stats: Display a live stream of container resource usage statistics.
+8.	docker events: Get real-time events from the Docker server.
+9.	docker system df: Show Docker disk usage.
+10.	docker system prune: Remove all unused containers, networks, volumes, and images.
+11.	docker port [container_id/name]: List port mappings or a specific mapping for a container.
+12.	docker top [container_id/name]: Display the running processes of a container.
+13.	docker wait [container_id/name]: Block until a container stops, then print its exit code.
+Docker Swarm:
+1.	docker swarm init: Initialize a Docker Swarm.
+2.	docker swarm join: Join a Docker Swarm as a worker or manager node.
+3.	docker node ls: List nodes in the Docker Swarm.
+4.	docker service ls: List services in the Docker Swarm.
+5.	docker service create: Create a new service in the Docker Swarm.
+6.	docker service scale: Scale a service in the Docker Swarm.
+7.	docker stack deploy: Deploy a new stack or update an existing stack in the Docker Swarm.
+These commands cover a wide range of Docker operations and should serve as a useful reference for Docker users.
+
