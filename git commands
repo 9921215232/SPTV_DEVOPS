@@ -1,0 +1,57 @@
+Steps to install git in Ubuntu
+>> Sudo apt update
+>> Sudo apt upgrade
+>> Sudo apt install git
+>> Git –version
+Steps to create REPO in terminal
+>> mkdir test_git   …… create simple folder first in terminal
+>> git init test_git  ……. To initialize this simple folder as REPO you have to use this command
+>> git add test_git  ….. Moving folder to staging, use this command
+>> git commit –m <add short message>   ….. to commit changes to REPO
+>> git status  …… to check on which branch you are and any changes pending to commit
+To restore deleted file from REPO
+>> rm <filename>   …… remove any sample file from repo
+>> git status  …. To check the current deletion status of file from git repo
+>> git restore <filename> to go back to previous stage
+--------------------------------------------------------------------------
+>> git diff   ………..   command shows you the difference or changes made in file so here you can go ahead to commit or move back to untrack stage
+>>  Git log will help you to show the author\date-time when changes in the file
+>> git log - - oneline   …….. to check logs in one-line format
+>> git log - - oneline pretty
+------------------------------------------------------------------------------------------------------
+Steps to clone repo from github
+>> Create new folder and use git init command to convert folder in local repo
+>>   While cloning any REPO from Github, git will ask you credentials each time so to avoid this you can set ID password through terminal using below commands
+git config --global user.name "Your Name"
+git config --global user.email "youremail@domain.com"
+>> Git clone <github URL>   …….. to clone data from remote repo to local Ubuntu repo
+>> make any changes on github repo and use “git pull” command to pull changes in local repo
+>> make changes in local repo and use command “git push” command to upload changes in github, don’t forget to commit changes on github every time on github
+(( Push the changes back to the repository on GitHub
+      To push changes from local to remote repository, we need to give credentials and sharing ID and password is not good practice so we need to add personal access token in origin URL. 
+      Process of generating one time token: Go to your profile on right upper corner in Github>> Go to settings >> on left side at the end, click Developer settings >> Left side, 
+      select Personal access token >> click Tokens (classic) >> Click on “Generate a personal access token” >> In new wizard, add Note, Select expiry of token, in Select scopes, 
+      select REPO >> Click on Generate token
+
+Now use this token in your origin url
+Git remote –v command will show you origin url of repository, in order to use git push without sharing your ID password, you have to set this url with generated token
+Here my origin URL is: origin  https://github.com/9921215232/github-test-repo.git
+So you need to add token using below command:
+Git remote set-url origin http://token@github.com/9921215232/github-test-repo.git
+Now try git push or git push origin master(or\develop) command ))
+-------------------------------------------------------------------------------------------------
+Informational:  
+1.	Path to remove repository from github >> go to repository >> settings >> Danger zone >> Delete repository
+2.	To remove repository from local >> go to directory where it resides >> rm –r <repo name> >> it will ask your permission to remove some files so simply press “Y” and enter, it will remove files bind in repository.
+3.	Difference between git pull and git fetch
+"Git pull" only pulls data of single branch of repository which you want
+"Git fetch" pulls data from all branches of remote repository
+--------------------------------------------------------------------------------------------------------------
+>> git checkout -b <new-branch-nam>e   to create new branch in git if version of git is old
+>> git switch -c <new-branch-name>    to create new branch in git for version above 2.23
+>> git branch –d <branchname>    ……… to remove any branch
+
+
+
+
+
