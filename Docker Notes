@@ -1,0 +1,68 @@
+	Initial Basic Commands
+	
+	To See images
+			docker images
+
+	To find out images in docker hub  (Never used)
+			docker search
+
+To download an image from docker hub
+		docker pull <image name>
+
+	To give name to the container and run (Never used)
+		docker run -it --name <container_name> <image_name> /bin/bash [-it = means interactive mode and direct to terminal]
+
+	To check, whether the services is starting or not
+		services docker status
+		or
+		service docker info
+	
+	To start the service
+		service docker start
+	
+	To start/stop container
+		docker start <container_name>
+		or
+		docker stop  <container_name>
+		
+	To go inside the container
+		docker attach  <container_name>
+		
+	To see all the container
+		docker ps -a
+	
+	To see only running container
+		docke ps
+		
+	To delete container
+		
+		docker rm  <container_name>
+	
+	To delete images
+		
+		docker image rm  <image_name>
+	
+	To exit from docker container
+	
+		exit
+	
+
+Other Basic Commands
+
+To see all created volumes
+	docker volume ls
+	
+To create docker volume (normal)
+	docker volume create <volume_name>
+	
+To delete volume
+	docker volume rm <volume_name>
+	
+To remove all unused docker volume
+	docker volume prune
+	
+To get volume details
+	docker volume inspect <volume_name>
+
+To get container details
+		docker container inspect <container_name>
