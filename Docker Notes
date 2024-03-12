@@ -13,7 +13,7 @@ To download an image from docker hub
 		docker run -it --name <container_name> <image_name> /bin/bash [-it = means interactive mode and direct to terminal]
 
 	To check, whether the services is starting or not
-		services docker status
+		service docker status
 		or
 		service docker info
 	
@@ -32,15 +32,21 @@ To download an image from docker hub
 		docker ps -a
 	
 	To see only running container
-		docke ps
+		docker ps
 		
 	To delete container
 		
 		docker rm  <container_name>
+
+	To delete container 
+		docker kill <container ID>
 	
 	To delete images
 		
-		docker image rm  <image_name>
+		docker image rm  <image_name>  or docker rmi <image name>
+
+	To delete and remove container
+		docker kill <container id> && docker rm <container id>
 	
 	To exit from docker container
 	
