@@ -1,0 +1,83 @@
+Docker file creation
+
+We have to create a container from our image, therefore create one container first
+
+	docker run -it --name <container_name > <image_name> /bin/bash
+
+	cd tmp/ [inside directory to create a file]
+
+Now create one file inside this tmp directory
+	
+	touch myfile
+
+Now if you want to see the difference between the base image & changes on it then -
+	
+	docker diff <old_container_name>[D = Deletion, C= change, A=append/addition]
+	
+Now create an image of this container
+
+	docker commit <container_name> <container_image_name>
+	
+	docker image
+	
+Now create a container from this image
+
+	docker run -it --name <container_name> <update_image_name> /bin/bash
+	-->ls
+	-->cd tmp/
+	-->iso/p
+	-->myfile [will get all files back]
+
+
+	
+
+Creating volume from Dockerfile
+
+Create a docker file and write
+	
+	FROM ubuntu VOLUME [*/myvolume]
+
+Then create an image from this Dockerfile 
+
+	docker build -t <image_name> .
+	
+Now create a container from image and run
+	
+	docker run -it --name <container_name> <image_name> /bin/bash
+
+Now do
+	
+	ls
+
+Now share volume with another container [Container <- ->Container]
+
+	docker run -it --name <container_name> --privileged=true --volumes-from  <container_name> <os_image_name_ex-ubuntu> /bin/bash
+	
+Now after creating container2, myvolume1 is visible, whatever you do in one volume, can be seen from another volume.
+
+Creating volume by using commands
+
+Creating volume by using commands
+	docker run -it --name <container_name> -v / <volume_name> <os_name> /bin/bash
+	
+Then do ls change dir to your volume
+
+
+Now create one more container and save volume
+	
+	docker run -it --name <container_name> --privileged=true --volumes-from  <container_name> <os_name> /bin/bash
+	
+Now you are inside the container; do ls and you can see your volume.
+Now create one file inside this volume and then check in container, you can see that file
+
+Volume [Host <- ->Container]
+
+Verify files in /home/ec2-user
+Create volumes in host and container and mapped them
+	
+	docker run -it --name <container_name> -v /home/ec2-user: /<volume_name> --privileged=true <os_name> /bin/bash  [check your volume]
+	-->cd /<volume_name> [Do ls, now you can see all files of host machine]
+	-->touch <file_name>
+	-->exit
+	
+Now check in ec2, you can see the files.
