@@ -7,7 +7,7 @@ sudo apt install docker.io
 sudo apt install docker-compose
 
 ***For Docker / add user in docker group
-sudo usermod -aG ubuntu
+sudo usermod -aG docker ubuntu
 sudo usermod -aG docker jenkins
 
 *Docker = group
@@ -73,14 +73,14 @@ To download an image from docker hub
 		
 		docker rm  <container_name>
 
-	To delete container 
+	To stop container 
 		docker kill <container ID>
 	
 	To delete images
 		
 		docker image rm  <image_name>  or docker rmi <image name>
 
-	To delete and remove container
+	To stop and delete, remove container
 		docker kill <container id> && docker rm <container id>
 	
 	To exit from docker container
